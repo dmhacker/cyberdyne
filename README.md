@@ -1,2 +1,2 @@
 # Cyberdyne
-Neural-network based artificial intelligence
+Neural net-based artificial intelligence
