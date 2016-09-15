@@ -20,29 +20,7 @@ For(X,1,E)
 		For(C,1,|LL(1))
 			[F](R,C)->|LI(C)
 		End
-		{N,max(|LL)}->dim([G])
-		For(M,1,|LL(1))
-			|LI(M)->[G](1,M)
-		End
-		|LI->|LP
-		seq(U,U,1,|LL(2))->|LN
-		For(I,2,N)
-			For(J,1,dim(|LN))
-				1*[J](I-1,J)->Z
-				For(K,1,dim(|LP))
-					|LP(K)*[I](I-1,(J-1)*dim(|LP)+K)+Z->Z
-				End
-				tanh(Z)->|LN(J)
-			End
-			For(M,1,dim(|LN))
-				|LN(M)->[G](I,M)
-			End
-			If I<N
-			Then
-				|LN->|LP
-				seq(U,U,1,|LL(I+1))->|LN
-			End
-		End
+		prgmNNET
 		"BACKPROPAGATION
 		{N-1,max(|LL)}->dim([H])
 		For(I,1,|LL(N))
