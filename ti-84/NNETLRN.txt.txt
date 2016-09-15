@@ -1,0 +1,86 @@
+ClrHome
+dim(|LL)->N
+Input "TRAINING SET=",[F]
+dim([F])->|LF
+If |LL(1)+|LL(N)!=|LF(2)
+Then
+	Disp "INVALID TRAINING SET"
+	Return
+End
+Input "LEARNING RATE=",theta
+Input "CYCLES:",E
+For(X,1,E)
+	ClrHome
+	Disp "CYCLE ...",X
+	0->G
+	randIntNoRep(1,|LF(1),|LF(1))->|LORDER
+	For(U,1,|LF(1))
+		|LORDER(U)->R
+		seq(U,U,1,|LL(1))->|LI
+		For(C,1,|LL(1))
+			[F](R,C)->|LI(C)
+		End
+		{N,max(|LL)}->dim([G])
+		For(M,1,|LL(1))
+			|LI(M)->[G](1,M)
+		End
+		|LI->|LP
+		seq(U,U,1,|LL(2))->|LN
+		For(I,2,N)
+			For(J,1,dim(|LN))
+				1*[J](I-1,J)->Z
+				For(K,1,dim(|LP))
+					|LP(K)*[I](I-1,(J-1)*dim(|LP)+K)+Z->Z
+				End
+				tanh(Z)->|LN(J)
+			End
+			For(M,1,dim(|LN))
+				|LN(M)->[G](I,M)
+			End
+			If I<N
+			Then
+				|LN->|LP
+				seq(U,U,1,|LL(I+1))->|LN
+			End
+		End
+		"BACKPROPAGATION
+		{N-1,max(|LL)}->dim([H])
+		For(I,1,|LL(N))
+			|LN(I)->Y
+			[F](R,|LL(1)+I)->T
+			(0.1+(1-Y^2))(T-Y)->[H](N-1,I)
+			G+((T-Y)^2/|LL(N))->G
+		End
+		If N>2
+		Then
+			For(I,N-1,2,~1)
+				For(J,1,|LL(I))
+					[G](I,J)->Y
+					0->Z
+					For(K,1,|LL(I+1))
+						Z+[H](I,K)*[I](I,(K-1)*|LL(I+1)+J)->Z
+					End
+					(1-Y^2)*Z->[H](I-1,J)
+				End
+			End
+			For(I,2,N)
+				For(J,1,|LL(I))
+					For(K,1,|LL(I-1))
+						[G](I-1,K)*[H](I-1,J)->D
+						[I](I-1,(J-1)*|LL(I-1)+K)->W
+						W+theta*D->[I](I-1,(J-1)*|LL(I-1)+K)
+					End
+				End
+			End
+			For(I,2,N)
+				For(J,1,|LL(I))
+					[H](I-1,J)->D
+					[J](I-1,J)->W
+					W+theta*D->[J](I-1,J)
+				End
+			End
+		End
+	End
+	Disp "TSS:",G/|LF(1)
+	If dim(rand(200))
+End

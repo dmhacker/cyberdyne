@@ -1,0 +1,17 @@
+dim(|LL)->N
+|LI->|LP
+seq(U,U,1,|LL(2))->|LN
+For(I,2,N)
+	For(J,1,dim(|LN))
+		1*[J](I-1,J)->Z
+		For(K,1,dim(|LP))
+			|LP(K)*[I](I-1,(J-1)*dim(|LP)+K)+Z->Z
+		End
+		tanh(Z)->|LN(J)
+	End
+	If I<N
+	Then
+		|LN->|LP
+		seq(U,U,1,|LL(I+1))->|LN
+	End
+End

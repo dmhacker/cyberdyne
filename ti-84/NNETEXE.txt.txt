@@ -1,0 +1,10 @@
+ClrHome
+Input "INPUT VECTOR:",I
+If dim(|LI)!=|LL(1)
+Then
+	Disp "INCORRECT NUM OF INPUTS"
+End
+
+prgmNNET
+
+Disp "OUTPUT:",|LN
