@@ -1,2 +1,2 @@
-# Neural-Networks
-Feed-forward neural networks with backpropagation 
+# Cyberdyne
+Neural-network based artificial intelligence
