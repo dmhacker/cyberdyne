@@ -33,6 +33,13 @@ cyberdyne
 
 ### TI-84
 
+<a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/menu.JPG" align="center" height="150" width="200" ></a>
+<a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/backprop.JPG" align="center" height="150" width="200" ></a>
+<a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/exec.JPG" align="center" height="150" width="200"></a>
+<a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/plot.JPG" align="center" height="150" width="200"></a>
+
+<sub><sup>These images are of a neural network that was trained on the AND function. From left to right: main menu screen, backpropogation, network test execution, error plot</sup></sub>
+
 Inside __ti-84/__ folder, there are 6 separate programs, each one handling a different aspect of a basic feed-forward neural network with tanh as the activation function.
 
 __NNET.8xp__ is the core program, and it contains the code for running the network given an appropriate input vector. The input and output vectors are stored in a TI-Basic lists, and the neuron/connection information is stored in a 2D matrix (TI-Basic does not support 3D matrices, so the information is flattened into a 2D one). 
