@@ -1,4 +1,4 @@
-# Cyberdyne
+# cyberdyne
 
 This is an assortment of miscallenous neural network implementations, a collection that will be expanded on overtime. 
 
@@ -9,15 +9,25 @@ cyberdyne
 ├── LICENSE
 ├── README.md
 └── ti-84
-    ├── NNET.8xp
-    ├── NNETEXE.8xp
-    ├── NNETGEN.8xp
-    └── NNETLRN.8xp
+    ├── bin
+    │   ├── NNET.8xp
+    │   ├── NNETEXE.8xp
+    │   ├── NNETGEN.8xp
+    │   ├── NNETLRN.8xp
+    │   ├── NNETMAIN.8xp
+    │   └── NNETPLOT.8xp
+    └── src
+        ├── NNET.8xp.txt
+        ├── NNETEXE.8xp.txt
+        ├── NNETGEN.8xp.txt
+        ├── NNETLRN.8xp.txt
+        ├── NNETMAIN.8xp.txt
+        └── NNETPLOT.8xp.txt
 ```
 
 ### TI-84
 
-Inside __ti-84/__ folder, there are 6 separate programs, each one handling a different aspect of a basic feed-forward neural network with tanh as the activation function. 
+Inside __ti-84/__ folder, there are 6 separate programs, each one handling a different aspect of a basic feed-forward neural network with tanh as the activation function.
 
 __NNET.8xp__ is the core program, and it contains the code for running the network given an appropriate input vector. The input and output vectors are stored in a TI-Basic lists, and the neuron/connection information is stored in a 2D matrix (TI-Basic does not support 3D matrices, so the information is flattened into a 2D one). 
 
