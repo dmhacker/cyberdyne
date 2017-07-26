@@ -1,28 +1,24 @@
-Variable Name: NNET
-Comment: Program file 07/26/17, 09:49
-Store Type: RAM
-----------
-dim(áL)üN
-{N,max(áL)}üdim([G])
-For(M,1,áL(1))
-áI(M)ü[G](1,M)
+dim(|LL)->N
+{N,max(|LL)}->dim([G])
+For(M,1,|LL(1))
+	|LI(M)->[G](1,M)
 End
-áIüáP
-seq(U,U,1,áL(2))üáN
+|LI->|LP
+seq(U,U,1,|LL(2))->|LN
 For(I,2,N)
-For(J,1,dim(áN))
-1*[J](I-1,J)üZ
-For(K,1,dim(áP))
-áP(K)*[I](I-1,(J-1)*dim(áP)+K)+ZüZ
-End
-tanh(Z)üáN(J)
-End
-For(M,1,dim(áN))
-áN(M)ü[G](I,M)
-End
-If I<N
-Then
-áNüáP
-seq(U,U,1,áL(I+1))üáN
-End
+	For(J,1,dim(|LN))
+		1*[J](I-1,J)->Z
+		For(K,1,dim(|LP))
+			|LP(K)*[I](I-1,(J-1)*dim(|LP)+K)+Z->Z
+		End
+		tanh(Z)->|LN(J)
+	End
+	For(M,1,dim(|LN))
+		|LN(M)->[G](I,M)
+	End
+	If I<N
+	Then
+		|LN->|LP
+		seq(U,U,1,|LL(I+1))->|LN
+	End
 End

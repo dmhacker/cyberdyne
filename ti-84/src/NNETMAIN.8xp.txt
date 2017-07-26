@@ -1,13 +1,9 @@
-Variable Name: NNETMAIN
-Comment: Program file 07/26/17, 09:49
-Store Type: RAM
-----------
 ClrHome
 Output(2,12,"v1.1")
 Output(3,8,"NEURAL NETWORK")
 Output(4,4,"FUNCTION APPROXIMATOR")
 Output(9,8,"DAVID HACKER")
-Pause 
+Pause
 Lbl A
 Menu("NNET OPTIONS","CREATE NETWORK",C,"TRAIN NETWORK",T,"TEST NETWORK",E,"SHOW ERROR PLOT",Z,"QUIT PROGRAM",Q)
 Lbl C

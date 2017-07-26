@@ -1,36 +1,32 @@
-Variable Name: NNETGEN
-Comment: Program file 07/26/17, 09:49
-Store Type: RAM
-----------
 ClrHome
 Input "LAYERS:",L
-If dim(·L)<2
+If dim(|LL)<2
 Then
-Disp "NEEDS >1 LAYERS"
-Return
+	Disp "NEEDS >1 LAYERS"
+	Return
 End
-dim(·L)¸N
-0¸S
+dim(|LL)->N
+0->S
 For(I,2,N-1)
-·L(I-1)*·L(I)¸¡
-If ¡>S
-¡¸S
+	|LL(I-1)*|LL(I)->theta
+	If theta>S
+	theta->S
 End
-randM(N-1,S)¸[I]
+randM(N-1,S)->[I]
 For(I,1,N-1)
-For(J,1,S)
-[I](I,J)/10¸[I](I,J)
+	For(J,1,S)
+		[I](I,J)/10->[I](I,J)
+	End
 End
-End
-randM(N-1,max(·L))¸[J]
+randM(N-1,max(|LL))->[J]
 For(I,1,N-1)
-For(J,1,max(·L))
-[J](I,J)/10¸[J](I,J)
+	For(J,1,max(|LL))
+		[J](I,J)/10->[J](I,J)
+	End
 End
-End
-ClrList·ERR
+ClrList |LERR
 ClrHome
-Disp "INPUTS:",·L(1)
+Disp "INPUTS:",|LL(1)
 Disp "HIDDEN LAYERS:",N-2
-Disp "OUTPUTS:",·L(N)
-Pause 
+Disp "OUTPUTS:",|LL(N)
+Pause

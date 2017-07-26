@@ -1,13 +1,9 @@
-Variable Name: NNETPLOT
-Comment: Program file 07/26/17, 09:49
-Store Type: RAM
-----------
 ClrHome
-seq(X,X,1,dim(áERR),1)üáERRX
-Plot1(Scatter,áERRX,áERR)
-ú1üTmin
-dim(áERRX)+2üTmax
-min(áERR)-.1üÁmin
-max(áERR)+.1üÁmax
-DispGra
+seq(X,X,1,dim(|LERR),1)->|LERRX
+Plot1(Scatter,|LERRX,|LERR)
+~1->Xmin
+dim(|LERRX)+2->Xmax
+min(|LERR)-.1->Ymin
+max(|LERR)+.1->Ymax
+DispGraph
 Pause 
