@@ -1,0 +1,36 @@
+Variable Name: NNETGEN
+Comment: Program file 07/26/17, 09:49
+Store Type: RAM
+----------
+ClrHome
+Input "LAYERS:",L
+If dim(áL)<2
+Then
+Disp "NEEDS >1 LAYERS"
+Return
+End
+dim(áL)üN
+0üS
+For(I,2,N-1)
+áL(I-1)*áL(I)üÁ
+If Á>S
+ÁüS
+End
+randM(N-1,S)ü[I]
+For(I,1,N-1)
+For(J,1,S)
+[I](I,J)/10ü[I](I,J)
+End
+End
+randM(N-1,max(áL))ü[J]
+For(I,1,N-1)
+For(J,1,max(áL))
+[J](I,J)/10ü[J](I,J)
+End
+End
+ClrListáERR
+ClrHome
+Disp "INPUTS:",áL(1)
+Disp "HIDDEN LAYERS:",N-2
+Disp "OUTPUTS:",áL(N)
+Pause 

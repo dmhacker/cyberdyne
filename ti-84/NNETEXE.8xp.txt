@@ -1,0 +1,13 @@
+Variable Name: NNETEXE
+Comment: Program file 07/26/17, 09:49
+Store Type: RAM
+----------
+ClrHome
+Input "INPUT VECTOR:",I
+If dim(בI)רבL(1)
+Then
+Disp "INCORRECT NUM OF INPUTS"
+End
+prgmNNET
+Disp "OUTPUT:",בN
+Pause 

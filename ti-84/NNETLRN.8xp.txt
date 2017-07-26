@@ -1,0 +1,103 @@
+Variable Name: NNETLRN
+Comment: Program file 07/26/17, 09:49
+Store Type: RAM
+----------
+ClrHome
+dim(·L)¸N
+Input "TRAINING SET=",[F]
+dim([F])¸·F
+If ·L(1)+·L(N)¯·F(2)
+Then
+Disp "INVALID TRAINING SET"
+Return
+End
+Input "LEARNING RATE=",¡
+Input "CYCLES:",E
+For(X,1,E)
+ClrHome
+0¸G
+51,·F(1),·F(1))¸·ORDER
+For(U,1,·F(1))
+Output(1,11,"CYCLE")
+Output(1,17,X)
+Output(1,23-int(log(U)),U)
+Output(1,24,"/")
+Output(1,25,·F(1))
+·ORDER(U)¸R
+seq(U,U,1,·L(1))¸·I
+For(C,1,·L(1))
+[F](R,C)¸·I(C)
+End
+Output(3,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(4,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(5,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(6,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(7,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(8,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(3,1,"RUNNING NETWORK ...")
+prgmNNET
+"BACKPROPAGATION
+{N-1,max(·L)}¸dim([H])
+Output(4,1,"COMPUTING INIT DELTAS ...")
+For(I,1,·L(N))
+·N(I)¸Y
+[F](R,·L(1)+I)¸T
+(0.1+(1-Y^2))(T-Y)¸[H](N-1,I)
+G+((T-Y)^2/·L(N))¸G
+End
+If N>2
+Then
+Output(5,1,"DETERMINING ERRORS ...")
+For(I,N-1,2,˙1)
+For(J,1,·L(I))
+[G](I,J)¸Y
+0¸Z
+For(K,1,·L(I+1))
+Z+[H](I,K)*[I](I,(K-1)*·L(I+1)+J)¸Z
+End
+(1-Y^2)*Z¸[H](I-1,J)
+End
+End
+Output(6,1,"UPDATING NODES ...")
+Output(8,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+For(I,2,N)
+For(J,1,·L(I))
+For(K,1,·L(I-1))
+[G](I-1,K)*[H](I-1,J)¸D
+[I](I-1,(J-1)*·L(I-1)+K)¸W
+W+¡*D¸[I](I-1,(J-1)*·L(I-1)+K)
+Output(7,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(7,1,"L")
+Output(7,2,I-1)
+Output(7,3,":")
+Output(7,5,K)
+Output(7,7,"=>")
+Output(7,10,J)
+End
+End
+End
+Output(7,1,"UPDATING BIASES ...")
+For(I,2,N)
+For(J,1,·L(I))
+[H](I-1,J)¸D
+[J](I-1,J)¸W
+W+¡*D¸[J](I-1,J)
+Output(8,1,"L")
+Output(8,2,I-1)
+Output(8,3,": B =>")
+Output(8,10,J)
+End
+End
+End
+End
+Output(8,1,"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+Output(9,1,"ERROR:")
+Output(9,8,round(G/·F(1),6))
+G/·F(1)¸·ERR(dim(·ERR)+1)
+If X<E
+Then
+If dim(rand(300))
+End
+End
+Pause 
+ClrHome
