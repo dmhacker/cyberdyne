@@ -16,6 +16,11 @@ cyberdyne
     │   ├── NNETLRN.8xp
     │   ├── NNETMAIN.8xp
     │   └── NNETPLOT.8xp
+    ├── img
+    │   ├── backprop.JPG
+    │   ├── exec.JPG
+    │   ├── menu.JPG
+    │   └── plot.JPG
     └── src
         ├── NNET.8xp.txt
         ├── NNETEXE.8xp.txt
@@ -23,6 +28,7 @@ cyberdyne
         ├── NNETLRN.8xp.txt
         ├── NNETMAIN.8xp.txt
         └── NNETPLOT.8xp.txt
+
 ```
 
 ### TI-84
