@@ -1,6 +1,6 @@
 # cyberdyne
 
-This is an assortment of miscallenous neural network implementations, a collection that will be expanded on overtime. 
+This is an assortment of miscellaneous neural network implementations, a collection that will be expanded on overtime. 
 
 ### Project Structure
 
