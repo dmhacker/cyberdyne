@@ -1,37 +1,6 @@
 # cyberdyne
 
-This is an assortment of miscellaneous neural network implementations, a collection that will be expanded on overtime. 
-
-### Project Structure
-
-```
-cyberdyne
-├── LICENSE
-├── README.md
-└── ti-84
-    ├── bin
-    │   ├── NNET.8xp
-    │   ├── NNETEXE.8xp
-    │   ├── NNETGEN.8xp
-    │   ├── NNETLRN.8xp
-    │   ├── NNETMAIN.8xp
-    │   └── NNETPLOT.8xp
-    ├── img
-    │   ├── backprop.JPG
-    │   ├── exec.JPG
-    │   ├── menu.JPG
-    │   └── plot.JPG
-    └── src
-        ├── NNET.8xp.txt
-        ├── NNETEXE.8xp.txt
-        ├── NNETGEN.8xp.txt
-        ├── NNETLRN.8xp.txt
-        ├── NNETMAIN.8xp.txt
-        └── NNETPLOT.8xp.txt
-
-```
-
-### TI-84
+As a fun side project, I programmed a simple feedforward neural network program into my graphing calculator. In no way is this efficient or practical, but it was interesting working with the memory and runtime constraints I had.  
 
 <a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/menu.JPG" align="center" height="150" width="200" ></a>
 <a><img src="https://github.com/dmhacker/cyberdyne/blob/master/ti-84/img/backprop.JPG" align="center" height="150" width="200" ></a>
